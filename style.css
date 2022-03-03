@@ -110,3 +110,12 @@ p.license {
 	color: #aaaaaa;
 	text-align: center;
 }
+
+h1.topic, h2.topic, h3.topic {
+	margin-bottom: -0.5em;
+	line-height: 1;
+}
+
+p.detail {
+	color: #aaaaaa;
+}
