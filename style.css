@@ -1,26 +1,21 @@
 body {
-	color: #eeeeee;
-	background-color: #222222;
-	max-width: 95%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2%;
-	margin-bottom: 2%;
+	color: #eee;
+	background-color: #222;
 	max-width: min(95%, 64em);
+	margin: 2% auto;
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	flex-basis: 0;
 	margin-top: 1em;
 }
 
 h1 {
-	color: #ffcc00;
+	color: #fc0;
 }
 
 h1.title {
@@ -42,73 +37,73 @@ div.center {
 }
 
 a:link {
-	color: #ffcc00;
+	color: #fc0;
 	text-decoration: none;
 }
 
 a:visited {
-	color: #ddaa00;
+	color: #da0;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #ffee22;
+	color: #fe2;
 	text-decoration: underline;
 }
 
 a:active {
-	color: #ffff66;
+	color: #ff6;
 	text-decoration: none;
 }
 
 a.button {
-	color: #222222;
-	background-color: #ffcc00;
-	padding: 0.2em 0.4em 0.2em 0.4em;
+	color: #222;
+	background-color: #fc0;
+	padding: 0.2em 0.4em;
 	border-radius: 0.4em;
 	font-weight: bold;
 	text-decoration: none;
 }
 
 a.button:link {
-	background-color: #ffcc00;
+	background-color: #fc0;
 }
 
 a.button:visited {
-	background-color: #ddaa00;
+	background-color: #da0;
 }
 
 a.button:hover {
-	background-color: #ffee22;
+	background-color: #fe2;
 }
 
 a.button:active {
-	background-color: #ffff66;
+	background-color: #ff6;
 }
 
 a.button {
-	color: #222222;
-	background-color: #ffcc00;
-	padding: 0.2em 0.4em 0.2em 0.4em;
+	color: #222;
+	background-color: #fc0;
+	padding: 0.2em 0.4em;
 	border-radius: 0.4em;
 	font-weight: bold;
 	text-decoration: none;
 }
 
 a.button:link {
-	background-color: #ffcc00;
+	background-color: #fc0;
 }
 
 a.button:visited {
-	background-color: #ddaa00;
+	background-color: #da0;
 }
 
 a.button:hover {
-	background-color: #ffee22;
+	background-color: #fe2;
 }
 
 a.button:active {
-	background-color: #ffff66;
+	background-color: #ff6;
 }
 
 a.title {
@@ -116,44 +111,45 @@ a.title {
 }
 
 p.license {
-	color: #aaaaaa;
+	color: #aaa;
 	text-align: center;
 }
 
-h1.topic, h2.topic, h3.topic {
+h1.topic,
+h2.topic,
+h3.topic {
 	margin-bottom: -0.5em;
 }
 
 p.detail {
-	color: #aaaaaa;
+	color: #aaa;
 }
 
 span.author {
 	font-weight: bold;
 }
 
-span.date {
-}
-
 p.content {
 	white-space: pre-line;
 }
 
-input.text, textarea.text {
+input.text,
+textarea.text {
 	width: 100%;
-	color: #eeeeee;
-	background-color: #444444;
-	padding: 0.5em 0.5em 0.5em 0.5em;
+	color: #eee;
+	background-color: #444;
+	padding: 0.5em;
 	border: none;
 	border-radius: 0.4em;
 	margin-top: 0.5em;
 	margin-bottom: 1em;
 }
 
-button, input.submit {
-	color: #222222;
-	background-color: #ffcc00;
-	padding: 0.2em 0.4em 0.2em 0.4em;
+button,
+input.submit {
+	color: #222;
+	background-color: #fc0;
+	padding: 0.2em 0.4em;
 	border: none;
 	border-radius: 0.4em;
 	font-weight: bold;
