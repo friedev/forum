@@ -25,25 +25,20 @@ h1 {
 
 h1.title {
 	vertical-align: middle;
-	line-height: 0;
+	margin-bottom: 0;
 	font-size: 300%;
 }
 
 h1.error {
 	font-family: monospace;
 	font-size: 600%;
-	line-height: 1;
+	line-height: 0;
 }
 
 div.center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-p.title {
-	line-height: 1.5;
-	text-align: right;
 }
 
 a:link {
@@ -127,11 +122,21 @@ p.license {
 
 h1.topic, h2.topic, h3.topic {
 	margin-bottom: -0.5em;
-	line-height: 1;
 }
 
 p.detail {
 	color: #aaaaaa;
+}
+
+span.author {
+	font-weight: bold;
+}
+
+span.date {
+}
+
+p.content {
+	white-space: pre-line;
 }
 
 input.text, textarea.text {
@@ -145,7 +150,7 @@ input.text, textarea.text {
 	margin-bottom: 1em;
 }
 
-input.submit {
+button, input.submit {
 	color: #222222;
 	background-color: #ffcc00;
 	padding: 0.2em 0.4em 0.2em 0.4em;

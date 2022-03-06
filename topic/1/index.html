@@ -1,24 +1,18 @@
 <!--#set var="title" value="An example topic" -->
 <!--#include virtual="/header.html"-->
-
-		<h1 class="topic"></h1>
-
-		<p class="detail">Posted by <span class="author">Example Author</span> on <span class="date">March 3, 2022 at 17:15 UTC</span></p>
-
-		<div class="post">
-			<p>
-				This is a sentence in the body of this post.
-				Eventually, it will be possible to submit topics and supply this text via a web form.
-				Initially, the text will just be displayed on the client side.
-				This will not allow any sort of actual discussion, but will nonetheless involve some JavaScript logic.
-				Later, the post submissions will be stored persistently on the server side.
-			</p>
+		<div id="thread">
+			<h1 class="topic">Example Topic</h1>
+			<div class="post">
+				<p class="detail"><span class="author">Example Author</span> on <span class="date">3/6/2022, 10:15:43 AM</span>:</p>
+				<p class="content">
+					This is a sentence in the body of this post.
+					Eventually, it will be possible to submit topics and supply this text via a web form.
+					Initially, the text will just be displayed on the client side.
+					This will not allow any sort of actual discussion, but will nonetheless involve some JavaScript logic.
+					Later, the post submissions will be stored persistently on the server side.
+				</p>
+				<hr>
+			</div>
 		</div>
-
-		<hr>
-
-		<h2>Reply</h2>
-
-<!--#include virtual="/form.html"-->
-
+<!--#include virtual="/reply_form.html"-->
 <!--#include virtual="/footer.html"-->

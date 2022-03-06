@@ -1,8 +1,11 @@
 <!--#set var="title" value="New Topic" -->
 <!--#include virtual="/header.html"-->
-
-		<h2>New Topic</h2>
-
-<!--#include virtual="/form.html"-->
-
+		<div id="thread">
+		</div>
+		<div id="topicFormWrapper">
+<!--#include virtual="/topic_form.html"-->
+		</div>
+		<div id="replyFormWrapper" hidden>
+<!--#include virtual="/reply_form.html"-->
+		</div>
 <!--#include virtual="/footer.html"-->
