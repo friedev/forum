@@ -1,3 +1,16 @@
+// Validate each form input
+// This is necessary since the form uses a button instead of a submit input
+function validate(form) {
+	for (const element of form.children) {
+		if ((element.nodeName == "INPUT"
+			|| element.nodeName == "TEXTAREA")
+			&& !element.reportValidity()) {
+			return false;
+		}
+	}
+	return true;
+}
+
 // Generate a post element from the given form
 function createPost(form) {
 	let author = document.createElement("span");
@@ -34,6 +47,10 @@ function createPost(form) {
 function addTopic() {
 	let form = document.getElementById("topicForm");
 
+	if (!validate(form)) {
+		return false;
+	}
+
 	let topic = document.createElement("h1");
 	topic.className = "topic";
 	topic.id = "topic";
@@ -59,6 +76,10 @@ function addTopic() {
 // Adds a reply to the thread based on the submitted form
 function addReply() {
 	let form = document.getElementById("replyForm");
+
+	if (!validate(form)) {
+		return false;
+	}
 
 	let post = createPost(form);
 
