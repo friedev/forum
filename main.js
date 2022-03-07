@@ -17,6 +17,9 @@ function createPost(form) {
 	author.className = "author";
 	author.innerHTML = form.author.value;
 
+	let img = document.createElement("img");
+	img.src = "/user.png";
+
 	let date = document.createElement("span");
 	date.className = "date";
 	date.innerHTML = new Date().toLocaleString();
@@ -32,13 +35,14 @@ function createPost(form) {
 	content.className = "content";
 	content.innerHTML = form.content.value;
 
-	let hr = document.createElement("hr");
+	let div = document.createElement("div");
+	div.appendChild(detail);
+	div.appendChild(content);
 
 	let post = document.createElement("div");
 	post.className = "post";
-	post.appendChild(detail);
-	post.appendChild(content);
-	post.appendChild(hr);
+	post.appendChild(img);
+	post.appendChild(div);
 
 	return post;
 }
@@ -58,9 +62,12 @@ function addTopic() {
 
 	let post = createPost(form);
 
+	let hr = document.createElement("hr");
+
 	let thread = document.getElementById("thread");
 	thread.appendChild(topic);
 	thread.appendChild(post);
+	thread.appendChild(hr);
 
 	document.title = form.topic.value + " - Forum";
 
@@ -83,8 +90,11 @@ function addReply() {
 
 	let post = createPost(form);
 
+	let hr = document.createElement("hr");
+
 	let thread = document.getElementById("thread");
 	thread.appendChild(post);
+	thread.appendChild(hr);
 
 	form.reset();
 

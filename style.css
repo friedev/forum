@@ -92,7 +92,7 @@ p.license {
 h1.topic,
 h2.topic,
 h3.topic {
-	margin-bottom: -0.5em;
+	margin-bottom: 0;
 }
 
 p.detail {
@@ -105,6 +105,11 @@ span.author {
 
 p.content {
 	white-space: pre-line;
+}
+
+div.post {
+	display: flex;
+	flex-flow: row;
 }
 
 input.text,
@@ -143,4 +148,11 @@ input.submit:active {
 
 .highlight {
 	background: #333;
+}
+
+img {
+	width: 5em;
+	height: 5em;
+	float: left;
+	margin: 1em;
 }
