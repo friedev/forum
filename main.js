@@ -86,6 +86,8 @@ function addReply() {
 	let thread = document.getElementById("thread");
 	thread.appendChild(post);
 
+	form.reset();
+
 	return false;
 }
 
