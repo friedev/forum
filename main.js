@@ -45,6 +45,8 @@ function addTopic() {
 	thread.appendChild(topic);
 	thread.appendChild(post);
 
+	document.title = form.topic.value + " - Forum";
+
 	// Remove the topic form and show the reply form
 	let topicFormWrapper = document.getElementById("topicFormWrapper");
 	topicFormWrapper.hidden = true;
