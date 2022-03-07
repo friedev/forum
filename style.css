@@ -131,6 +131,16 @@ input.submit {
 	margin-bottom: 1em;
 }
 
+button:hover,
+input.submit:hover {
+	background-color: #fe2;
+}
+
+button:active,
+input.submit:active {
+	background-color: #ff6;
+}
+
 .highlight {
 	background: #222;
 }
