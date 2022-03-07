@@ -81,31 +81,6 @@ a.button:active {
 	background-color: #ff6;
 }
 
-a.button {
-	color: #222;
-	background-color: #fc0;
-	padding: 0.2em 0.4em;
-	border-radius: 0.4em;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-a.button:link {
-	background-color: #fc0;
-}
-
-a.button:visited {
-	background-color: #da0;
-}
-
-a.button:hover {
-	background-color: #fe2;
-}
-
-a.button:active {
-	background-color: #ff6;
-}
-
 a.title {
 	text-decoration: none;
 }
