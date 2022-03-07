@@ -1,3 +1,10 @@
+// Invert the visibility of all children to toggle collapsing
+function collapse(element) {
+	for (const child of element.children) {
+		child.hidden = !child.hidden;
+	}
+}
+
 // Validate each form input
 // This is necessary since the form uses a button instead of a submit input
 function validate(form) {
@@ -39,15 +46,24 @@ function createPost(form) {
 	div.appendChild(detail);
 	div.appendChild(content);
 
+	let collapsed = document.createElement("p");
+	collapsed.className = "collapsed";
+	collapsed.hidden = true;
+	collapsed.innerHTML = "(expand)";
+
 	let post = document.createElement("div");
 	post.className = "post";
 	post.appendChild(img);
 	post.appendChild(div);
+	post.appendChild(collapsed);
+	post.onclick = function() {
+		collapse(post);
+	};
 
 	return post;
 }
 
-// Adds a topic to the thread based on the submitted form
+// Add a topic to the thread based on the submitted form
 function addTopic() {
 	let form = document.getElementById("topicForm");
 
@@ -80,7 +96,7 @@ function addTopic() {
 	return false;
 }
 
-// Adds a reply to the thread based on the submitted form
+// Add a reply to the thread based on the submitted form
 function addReply() {
 	let form = document.getElementById("replyForm");
 
@@ -99,14 +115,4 @@ function addReply() {
 	form.reset();
 
 	return false;
-}
-
-// This highlighting could be done via CSS with the :hover selector
-// However, this demonstrates dynamic functionality (feedback) in JavaScript
-function highlight(id) {
-	document.getElementById(id).classList.add("highlight");
-}
-
-function unhighlight(id) {
-	document.getElementById(id).classList.remove("highlight");
 }

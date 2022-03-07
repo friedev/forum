@@ -98,6 +98,10 @@ h3.topic {
 	margin-bottom: -0.5em;
 }
 
+div.topic:hover {
+	background: #333;
+}
+
 p.detail {
 	color: #aaa;
 }
@@ -113,6 +117,10 @@ p.content {
 div.post {
 	display: flex;
 	flex-flow: row;
+}
+
+div.post:hover {
+	background: #333;
 }
 
 input.text,
@@ -149,13 +157,13 @@ input.submit:active {
 	background-color: #ff6;
 }
 
-.highlight {
-	background: #333;
-}
-
 img {
 	width: 5em;
 	height: 5em;
 	float: left;
 	margin: 1em;
+}
+
+p.collapsed {
+	color: #aaa;
 }

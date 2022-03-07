@@ -7,7 +7,7 @@
 		<main>
 			<div id="thread">
 				<h1 class="topic">Discussion about some obscure topic</h1>
-				<div class="post">
+				<div class="post" onclick="collapse(this);">
 					<img src="/user.png" />
 					<div>
 						<p class="detail"><span class="author">Verbose Poster</span> on <span class="date">3/6/2022, 10:16:22 AM</span>:</p>
@@ -17,22 +17,25 @@
 
 						Discuss away!</p>
 					</div>
+					<p class="collapsed" hidden>(expand)</p>
 				</div>
 				<hr />
-				<div class="post">
+				<div class="post" onclick="collapse(this);">
 					<img src="/user.png" />
 					<div>
 						<p class="detail"><span class="author">Internet Troll</span> on <span class="date">3/6/2022, 10:19:31 AM</span>:</p>
 						<p class="content">Your opinion is wrong!</p>
 					</div>
+					<p class="collapsed" hidden>(expand)</p>
 				</div>
 				<hr />
-				<div class="post">
+				<div class="post" onclick="collapse(this);">
 					<img src="/user.png" />
 					<div>
 						<p class="detail"><span class="author">Verbose Poster</span> on <span class="date">3/6/2022, 10:23:55 AM</span>:</p>
 						<p class="content">Thank you for the constructive criticism.</p>
 					</div>
+					<p class="collapsed" hidden>(expand)</p>
 				</div>
 				<hr />
 			</div>
