@@ -11,7 +11,6 @@ header {
 	align-items: center;
 	flex-flow: row wrap;
 	flex-basis: 0;
-	margin-top: 1em;
 }
 
 h1 {
@@ -20,7 +19,7 @@ h1 {
 
 h1.title {
 	vertical-align: middle;
-	margin-bottom: 0;
+	margin: 0;
 	font-size: 300%;
 }
 
