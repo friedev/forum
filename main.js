@@ -91,6 +91,8 @@ function addReply() {
 	return false;
 }
 
+// This highlighting could be done via CSS with the :hover selector
+// However, this demonstrates dynamic functionality (feedback) in JavaScript
 function highlight(id) {
 	document.getElementById(id).classList.add("highlight");
 }
