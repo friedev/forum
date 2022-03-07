@@ -67,3 +67,11 @@ function addReply() {
 
 	return false;
 }
+
+function highlight(id) {
+	document.getElementById(id).classList.add("highlight");
+}
+
+function unhighlight(id) {
+	document.getElementById(id).classList.remove("highlight");
+}
