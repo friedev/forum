@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start() ?>
 <html lang="en">
 	<head>
 		<title>De finibus bonorum et malorum - Forum</title>
@@ -6,7 +7,7 @@
 	</head>
 <!--#include virtual="/include/head.html"-->
 	<body>
-<!--#include virtual="/include/header.html"-->
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php' ?>
 		<main>
 			<div id="thread">
 				<h1 class="topic">De finibus bonorum et malorum</h1>

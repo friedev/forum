@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+<?php session_start() ?>
 <html lang="en">
 	<head>
 		<title>Forum</title>
 <!--#include virtual="/include/head.html"-->
 	</head>
 	<body>
-<!--#include virtual="/include/header.html"-->
+		<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php' ?>
 		<main>
 			<div id="topic1" class="topic">
 				<a href="topic/1"><h3 class="topic">An example topic</h3></a>

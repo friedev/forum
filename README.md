@@ -1,12 +1,12 @@
 # Forum
 
-A basic web forum for the CSCE 464 course project.
+A basic PHP web forum for the CSCE 464 course project.
 
-*Currently a work-in-progress; the current implementation is frontend-only.*
+*Work-in-progress.*
 
 ## Installation
 
-This site requires SSI support.
+This site requires SSI support, MariaDB/MySQL, PHP 7, and mysqli.
 
 ## License
 
