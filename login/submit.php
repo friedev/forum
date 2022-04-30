@@ -11,22 +11,13 @@
 				. '<a href="/">Return to the main page.</a>';
 		}
 
-		$server = 'localhost';
-		$username = 'forum';
-		$password = 'ah2BSrY3P3pprRrm';
-		$dbname = 'forum';
-		$conn = mysqli_connect(
-			$server,
-			$username,
-			$password,
-			$dbname
-		);
-		if (!$conn) {
+		$mysqli = new mysqli('localhost', 'forum', 'ah2BSrY3P3pprRrm', 'forum');
+		if ($mysqli->connect_errno) {
 			return
 				'Could not connect to database:'
 				. '<br />'
 				. '<pre>'
-				. mysqli_connect_error()
+				. $mysqli->connect_error
 				. '</pre>'
 				. '<br />'
 				. '<a href="/login">Try again.</a>'
@@ -36,25 +27,15 @@
 
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-		$stmt = mysqli_stmt_init($conn);
-		mysqli_stmt_prepare(
-			$stmt,
-			'SELECT `displayname` FROM `users` WHERE `username` = ? AND `password` = ?'
+		$stmt = $mysqli->prepare(
+			'SELECT `displayname` FROM `users` '
+			. 'WHERE `username` = ? AND `password` = ?'
 		);
-		mysqli_stmt_bind_param(
-			$stmt,
-			'ss',
-			$username,
-			$password
-		);
-		mysqli_stmt_bind_result($stmt, $displayname);
+		$stmt->bind_param('ss', $username, $password);
+		$stmt->bind_result($displayname);
 
-		if (
-			mysqli_stmt_execute($stmt)
-			&& mysqli_stmt_store_result($stmt)
-			&& mysqli_stmt_fetch($stmt)
-		) {
-			if (mysqli_stmt_num_rows($stmt) == 1) {
+		if ($stmt->execute() && $stmt->store_result() && $stmt->fetch()) {
+			if ($stmt->num_rows() == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['displayname'] = $displayname;
 				$msg =
@@ -74,7 +55,7 @@
 				'There was an error handling your login:'
 				. '<br />'
 				. '<pre>'
-				. mysqli_error($conn)
+				. $mysqli->error
 				. '</pre>'
 				. '<br />'
 				. '<a href="/login">Try again.</a>'
@@ -82,8 +63,8 @@
 				. '<a href="/">Return to the main page.</a>';
 		}
 
-		mysqli_stmt_close($stmt);
-		mysqli_close($conn);
+		$stmt->close();
+		$mysqli->close();
 		return $msg;
 	}
 	$msg = login_user();

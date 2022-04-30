@@ -11,22 +11,13 @@
 				. '<a href="/">Return to the main page.</a>';
 		}
 
-		$server = 'localhost';
-		$username = 'forum';
-		$password = 'ah2BSrY3P3pprRrm';
-		$dbname = 'forum';
-		$conn = mysqli_connect(
-			$server,
-			$username,
-			$password,
-			$dbname
-		);
-		if (!$conn) {
+		$mysqli = new mysqli('localhost', 'forum', 'ah2BSrY3P3pprRrm', 'forum');
+		if ($mysqli->connect_errno) {
 			return
 				'Could not connect to database:'
 				. '<br />'
 				. '<pre>'
-				. mysqli_connect_error()
+				. $mysqli->connect_error
 				. '</pre>'
 				. '<br />'
 				. '<a href="/register">Try again.</a>'
@@ -37,22 +28,14 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$displayname = $_POST['displayname'];
-		$stmt = mysqli_stmt_init($conn);
-		mysqli_stmt_prepare(
-			$stmt,
+		$stmt = $mysqli->prepare(
 			'INSERT INTO `users` '
 			. '(`username`, `password`, `displayname`) '
 			. 'VALUES (?, ?, ?)'
 		);
-		mysqli_stmt_bind_param(
-			$stmt,
-			'sss',
-			$username,
-			$password,
-			$displayname
-		);
+		$stmt->bind_param('sss', $username, $password, $displayname);
 
-		if (mysqli_stmt_execute($stmt)) {
+		if ($stmt->execute()) {
 			$_SESSION['username'] = $username;
 			$_SESSION['displayname'] = $displayname;
 			$msg =
@@ -63,15 +46,15 @@
 			$msg =
 				'There was an error handling your registration:'
 				. '<br />'
-				. mysqli_error($conn)
+				. $mysqli->error
 				. '<br />'
 				. '<a href="/register">Try again.</a>'
 				. '<br />'
 				. '<a href="/">Return to the main page.</a>';
 		}
 
-		mysqli_stmt_close($stmt);
-		mysqli_close($conn);
+		$stmt->close();
+		$mysqli->close();
 		return $msg;
 	}
 	$msg = register_user();
