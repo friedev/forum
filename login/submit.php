@@ -28,8 +28,10 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$stmt = $mysqli->prepare(
-			'SELECT `displayname` FROM `users` '
-			. 'WHERE `username` = ? AND `password` = ?'
+			'SELECT `displayname` '
+			. 'FROM `users` '
+			. 'WHERE `username` = ? '
+			. 'AND `password` = ?'
 		);
 		$stmt->bind_param('ss', $username, $password);
 		$stmt->bind_result($displayname);
