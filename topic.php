@@ -51,7 +51,8 @@
 					. 'FROM `posts` '
 					. 'JOIN `topics` ON `posts`.`topic_id` = `topics`.`id` '
 					. 'JOIN `users` ON `posts`.`user_id` = `users`.`id` '
-					. 'WHERE `posts`.`topic_id` = ?'
+					. 'WHERE `posts`.`topic_id` = ? '
+					. 'ORDER BY `posts`.`date`'
 				);
 				$stmt->bind_param('i', $id);
 				$stmt->bind_result($content, $date, $displayname);
