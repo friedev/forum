@@ -1,11 +1,9 @@
 		<h2 id="formName">New Topic</h2>
 
-		<form id="topicForm" name="topicForm">
-			<label for="topic">Title:</label><br />
-			<input class="text" type="text" name="topic" required autofocus /><br />
-			<label for="author">Author:</label><br />
-			<input class="text" type="text" name="author" required /><br />
+		<form id="topicForm" name="topicForm" action="/topic.php" method="post">
+			<label for="title">Title:</label><br />
+			<input class="text" type="text" name="title" required autofocus /><br />
 			<label for="content">Content:</label><br />
 			<textarea class="text" name="content" rows="8" required></textarea><br />
-			<button type="submit" onClick="return addTopic(this.form);">Post</button>
+			<input class="submit" type="submit" name="submit" value="Post" />
 		</form>

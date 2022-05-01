@@ -1,9 +1,6 @@
 		<h2 id="formName">Reply</h2>
 
-		<form id="replyForm" name="replyForm">
-			<label for="author">Author:</label><br />
-			<input class="text" type="text" name="author" required autofocus /><br />
-			<label for="content">Content:</label><br />
+		<form id="replyForm" name="replyForm" method="post">
 			<textarea class="text" name="content" rows="8" required></textarea><br />
-			<button type="submit" onClick="return addReply(this.form);">Post</button>
+			<input class="submit" type="submit" name="submit" value="Post" />
 		</form>
