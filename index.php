@@ -7,16 +7,7 @@ function load_topics() {
 	# database is configured to only allow connections from localhost
 	$mysqli = new mysqli('localhost', 'forum', 'ah2BSrY3P3pprRrm', 'forum');
 	if ($mysqli->connect_errno) {
-		return
-			'Could not connect to database:'
-			. '<br />'
-			. '<pre>'
-			. $mysqli->connect_error
-			. '</pre>'
-			. '<br />'
-			. '<a href="/login">Try again.</a>'
-			. '<br />'
-			. '<a href="/">Return to the main page.</a>';
+		return '<p class="error">Database connection failed; try again later.</p>';
 	}
 
 	# Get all necessary topic metadata to display the index
