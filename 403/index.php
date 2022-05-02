@@ -8,12 +8,8 @@
 	<body>
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php' ?>
 		<main>
-			<div class="center">
-				<h1 class="error">403</h1>
-			</div>
-			<div class="center">
-				<p><em>Forbidden</em></p>
-			</div>
+			<h1 class="error">403</h1>
+			<p>Forbidden</p>
 		</main>
 <!--#include virtual="/include/footer.html"-->
 	</body>
