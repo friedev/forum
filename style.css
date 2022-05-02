@@ -47,8 +47,8 @@ main {
 }
 
 main > p,
-main > h1,
-main > h2 {
+main h1,
+main h2 {
 	margin-bottom: 0.5em;
 }
 
@@ -80,8 +80,9 @@ footer {
 	color: #666;
 }
 
-div.topic {
-	padding: 0.5em 0;
+div.topic,
+div.post {
+	padding: 0.5em;
 }
 
 div.topic:hover,
@@ -100,12 +101,6 @@ p.content {
 div#thread > p,
 div#thread > h2 {
 	margin-top: 0.5em;
-}
-
-div.post {
-	padding: 1em 0;
-	display: flex;
-	flex-flow: row;
 }
 
 input,
