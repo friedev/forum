@@ -2,17 +2,7 @@
 <?php session_start() ?>
 <?php
 	function submit_post($mysqli, $topic_id=-1) {
-		$stmt = $mysqli->prepare(
-			'SELECT `id` '
-			. 'FROM `users` '
-			. 'WHERE `username` = ?'
-		);
-		$stmt->bind_param('s', $_SESSION['username']);
-		$stmt->bind_result($user_id);
-		$stmt->execute();
-		$stmt->fetch();
-		$stmt->close();
-
+		$user_id = $_SESSION['user_id'];
 		if ($topic_id == -1) {
 			$title = $_POST['title'];
 			$stmt = $mysqli->prepare(

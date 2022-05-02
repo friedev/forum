@@ -28,16 +28,17 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$stmt = $mysqli->prepare(
-			'SELECT `displayname` '
+			'SELECT `id`, `displayname` '
 			. 'FROM `users` '
 			. 'WHERE `username` = ? '
 			. 'AND `password` = ?'
 		);
 		$stmt->bind_param('ss', $username, $password);
-		$stmt->bind_result($displayname);
+		$stmt->bind_result($user_id, $displayname);
 
 		if ($stmt->execute() && $stmt->store_result() && $stmt->fetch()) {
 			if ($stmt->num_rows() == 1) {
+				$_SESSION['user_id'] = $user_id;
 				$_SESSION['username'] = $username;
 				$_SESSION['displayname'] = $displayname;
 				$msg =

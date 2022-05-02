@@ -36,6 +36,7 @@
 		$stmt->bind_param('sss', $username, $password, $displayname);
 
 		if ($stmt->execute()) {
+			$_SESSION['user_id'] = $mysqli->insert_id;
 			$_SESSION['username'] = $username;
 			$_SESSION['displayname'] = $displayname;
 			$msg =
