@@ -69,13 +69,13 @@ a:active {
 	text-decoration: none;
 }
 
-p.license {
+footer {
 	text-align: center;
 }
 
 p.detail,
 p.collapsed,
-p.license {
+footer {
 	color: #666;
 }
 
@@ -155,7 +155,7 @@ input.submit {
 
 	p.detail,
 	p.collapsed,
-	p.license {
+	footer {
 		color: #888;
 	}
 
