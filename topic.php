@@ -76,7 +76,7 @@
 				. '</span>'
 				. ' on '
 				. '<span class="date">'
-				. $date
+				. date_format(date_create($date), 'c')
 				. '</span>'
 				. ':'
 				. '</p>'

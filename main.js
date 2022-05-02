@@ -4,3 +4,12 @@ function collapse(element) {
 		child.hidden = !child.hidden;
 	}
 }
+
+function localizeDates() {
+	for (const element of document.getElementsByClassName("date")) {
+		const date = new Date(Date.parse(element.innerHTML));
+		element.innerHTML = date.toLocaleString();
+	}
+}
+
+localizeDates();
