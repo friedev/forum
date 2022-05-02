@@ -10,20 +10,20 @@
 		<main>
 			<h1>Register</h1>
 			<?php
-				# Show a user-friendly error message based on the error code
-				if (isset($_GET['error'])) {
-					switch ($_GET['error']) {
-					case 1:
-						echo '<p class="error">That username has been taken.</p>';
-						break;
-					case 2:
-						echo '<p class="error">Database connection failed; try again later.</p>';
-						break;
-					default:
-						echo '<p class="error">An internal error occurred during registration.</p>';
-						break;
-					}
+			# Show a user-friendly error message based on the error code
+			if (isset($_GET['error'])) {
+				switch ($_GET['error']) {
+				case 1:
+					echo '<p class="error">That username has been taken.</p>';
+					break;
+				case 2:
+					echo '<p class="error">Database connection failed; try again later.</p>';
+					break;
+				default:
+					echo '<p class="error">An internal error occurred during registration.</p>';
+					break;
 				}
+			}
 			?>
 			<form action="submit.php" method="post">
 				<label>Username</label><br />
