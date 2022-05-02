@@ -45,7 +45,9 @@
 		$stmt->execute();
 		$stmt->fetch();
 
-		$msg .= "<h1 class=\"topic\">$title</h1>";
+		$msg .= '<h1 class="topic">'
+			. htmlentities($title)
+			. '</h1>';
 
 		$stmt->close();
 
@@ -69,7 +71,7 @@
 				. '<div class="content">'
 				. '<p class="detail">'
 				. '<span class="user">'
-				. $displayname
+				. htmlentities($displayname)
 				. '</span>'
 				. ' on '
 				. '<span class="date">'
@@ -78,7 +80,7 @@
 				. ':'
 				. '</p>'
 				. '<p class="content">'
-				. $content
+				. htmlentities($content)
 				. '</p>'
 				. '</div>'
 				. '<p class="collapsed" hidden>'

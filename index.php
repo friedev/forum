@@ -33,12 +33,12 @@
 				'<div class="topic">'
 				. "<a href=\"topic.php?id=$id\">"
 				. '<h3 class="topic">'
-				. $title
+				. htmlentities($title)
 				. '</h3>'
 				. '</a>'
 				. '<p class="detail">'
 				. '<span class="user">'
-				. $displayname
+				. htmlentities($displayname)
 				. '</span>'
 				. ' on '
 				. '<span class="date">'

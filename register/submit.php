@@ -40,7 +40,11 @@
 			$_SESSION['username'] = $username;
 			$_SESSION['displayname'] = $displayname;
 			$msg =
-				"Welcome, $displayname! You are now registered as $username."
+				'Welcome, '
+				. htmlentities($displayname)
+				. '! You are now registered as '
+				. htmlentities($username)
+				. '.'
 				. '<br />'
 				. '<a href="/">Return to the main page.</a>';
 		} else {
