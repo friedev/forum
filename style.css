@@ -46,8 +46,9 @@ main {
 	margin: 1em auto;
 }
 
-main h1,
-main h2 {
+main > p,
+main > h1,
+main > h2 {
 	margin-bottom: 0.5em;
 }
 
@@ -132,6 +133,11 @@ input.submit {
 	border-radius: 0.4em;
 	font-size: 100%;
 	text-decoration: none;
+}
+
+.error {
+	color: #f40;
+	font-weight: bold;
 }
 
 @media (prefers-color-scheme: dark) {

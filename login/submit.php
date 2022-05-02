@@ -1,28 +1,14 @@
-<!DOCTYPE html>
 <?php session_start() ?>
 <?php
-	function login_user() {
 		if (!isset($_POST['submit'])) {
-			return
-				'No login details were received.'
-				. '<br />'
-				. '<a href="/login">Try again.</a>'
-				. '<br />'
-				. '<a href="/">Return to the main page.</a>';
+			header('Location: index.php');
+			die();
 		}
 
 		$mysqli = new mysqli('localhost', 'forum', 'ah2BSrY3P3pprRrm', 'forum');
 		if ($mysqli->connect_errno) {
-			return
-				'Could not connect to database:'
-				. '<br />'
-				. '<pre>'
-				. $mysqli->connect_error
-				. '</pre>'
-				. '<br />'
-				. '<a href="/login">Try again.</a>'
-				. '<br />'
-				. '<a href="/">Return to the main page.</a>';
+			header('Location: index.php?error=2');
+			die();
 		}
 
 		$username = $_POST['username'];
@@ -36,54 +22,18 @@
 		$stmt->bind_param('ss', $username, $password);
 		$stmt->bind_result($user_id, $displayname);
 
-		if ($stmt->execute() && $stmt->store_result() && $stmt->fetch()) {
-			if ($stmt->num_rows() == 1) {
-				$_SESSION['user_id'] = $user_id;
-				$_SESSION['username'] = $username;
-				$_SESSION['displayname'] = $displayname;
-				$msg =
-					"You are now logged in as $username."
-					. '<br />'
-					. '<a href="/">Return to the main page.</a>';
-			} else {
-				$msg =
-					'Incorrect username or password.'
-					. '<br />'
-					. '<a href="/login">Try again.</a>'
-					. '<br />'
-					. '<a href="/">Return to the main page.</a>';
-			}
+		if ($stmt->execute()
+			&& $stmt->store_result()
+			&& $stmt->fetch()
+			&& $stmt->num_rows() == 1
+		) {
+			$_SESSION['user_id'] = $user_id;
+			$_SESSION['username'] = $username;
+			$_SESSION['displayname'] = $displayname;
+			header('Location: /');
 		} else {
-			$msg =
-				'There was an error handling your login:'
-				. '<br />'
-				. '<pre>'
-				. $mysqli->error
-				. '</pre>'
-				. '<br />'
-				. '<a href="/login">Try again.</a>'
-				. '<br />'
-				. '<a href="/">Return to the main page.</a>';
+			header('Location: index.php?error=1');
 		}
-
 		$stmt->close();
 		$mysqli->close();
-		return $msg;
-	}
-	$msg = login_user();
 ?>
-<html lang="en">
-	<head>
-		<title>Login Submitted - Forum</title>
-<!--#include virtual="/include/head.html"-->
-	</head>
-	<body>
-		<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php' ?>
-		<main>
-			<p>
-				<?php echo $msg ?>
-			</p>
-		</main>
-<!--#include virtual="/include/footer.html"-->
-	</body>
-</html>
