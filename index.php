@@ -1,6 +1,10 @@
 <?php session_start() ?>
 <?php
+	# Loads all topic data to display on the index page
 	function load_topics() {
+		# Connect to the database
+		# Since the password is stored in plain text, ensure that your MySQL
+		# database is configured to only allow connections from localhost
 		$mysqli = new mysqli('localhost', 'forum', 'ah2BSrY3P3pprRrm', 'forum');
 		if ($mysqli->connect_errno) {
 			return
@@ -15,6 +19,7 @@
 				. '<a href="/">Return to the main page.</a>';
 		}
 
+		# Get all necessary topic metadata to display the index
 		$stmt = $mysqli->prepare(
 			'SELECT `topics`.`id`, '
 			. '`topics`.`title`, '
@@ -26,6 +31,7 @@
 		$stmt->bind_result($id, $title, $date, $displayname);
 		$stmt->execute();
 
+		# Generate the index and store it to the $msg buffer
 		$msg = '';
 		while ($stmt->fetch()) {
 			$msg .=

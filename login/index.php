@@ -10,6 +10,7 @@
 		<main>
 			<h1>Login</h1>
 			<?php
+				# Show a user-friendly error message based on the error code
 				if (isset($_GET['error'])) {
 					switch ($_GET['error']) {
 					case 1:
