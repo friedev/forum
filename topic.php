@@ -124,6 +124,8 @@
 			}
 			$topic_id = submit_post($mysqli);
 			header("Location: topic.php?id=$topic_id");
+			$mysqli->close();
+			die();
 		} else {
 			$topic_id = $_GET['id'];
 			if (isset($_POST['submit'])) {
@@ -147,7 +149,15 @@
 		<?php include $_SERVER['DOCUMENT_ROOT'] . '/include/header.php' ?>
 		<main>
 			<?php echo $msg ?>
-<!--#include virtual="/include/reply_form.html"-->
+			<?php if (isset($_SESSION['username'])): ?>
+			<h2 id="formName">Reply</h2>
+			<form id="replyForm" name="replyForm" method="post">
+				<textarea class="text" name="content" rows="8" required></textarea><br />
+				<input class="submit" type="submit" name="submit" value="Post" />
+			</form>
+			<?php else: ?>
+			<p><a href="/login">Log in</a> or <a href="/register">register</a> to post a reply.</p>
+			<?php endif; ?>
 		</main>
 <!--#include virtual="/include/footer.html"-->
 	</body>
