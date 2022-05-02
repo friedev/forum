@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <?php session_start() ?>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>New Topic - Forum</title>

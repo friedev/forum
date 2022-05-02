@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php session_start() ?>
 <?php
 	function load_topics() {
@@ -54,6 +53,7 @@
 	}
 	$msg = load_topics();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Forum</title>

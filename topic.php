@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php session_start() ?>
 <?php
 	function submit_post($mysqli, $topic_id=-1) {
@@ -132,6 +131,7 @@
 
 	$msg = load_topic();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title><?php echo htmlentities($title) ?> - Forum</title>
