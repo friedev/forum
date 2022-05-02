@@ -15,7 +15,9 @@
 					} else {
 						echo
 							'Logged in as '
+							. '<span class="user">'
 							. $_SESSION['displayname']
+							. '</span>'
 							. ' ('
 							. '<a href="/logout">'
 							. 'Log Out'

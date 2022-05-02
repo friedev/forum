@@ -37,7 +37,7 @@
 				. '</h3>'
 				. '</a>'
 				. '<p class="detail">'
-				. '<span class="author">'
+				. '<span class="user">'
 				. $displayname
 				. '</span>'
 				. ' on '

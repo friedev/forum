@@ -78,7 +78,7 @@
 				'<div class="post" onclick="collapse(this);">'
 				. '<div class="content">'
 				. '<p class="detail">'
-				. '<span class="author">'
+				. '<span class="user">'
 				. $displayname
 				. '</span>'
 				. ' on '
