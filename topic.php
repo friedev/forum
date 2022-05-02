@@ -76,8 +76,7 @@
 		while ($stmt->fetch()) {
 			$msg .=
 				'<div class="post" onclick="collapse(this);">'
-				. '<img src="/user.png">'
-				. '<div>'
+				. '<div class="content">'
 				. '<p class="detail">'
 				. '<span class="author">'
 				. $displayname
@@ -95,8 +94,7 @@
 				. '<p class="collapsed" hidden>'
 				. '(expand)'
 				. '</p>'
-				. '</div>'
-				. '<hr />';
+				. '</div>';
 		}
 
 		$stmt->close();

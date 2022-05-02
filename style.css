@@ -1,110 +1,85 @@
-body {
-	font-family: sans-serif;
-	color: #eee;
-	background-color: #222;
-	margin: 2% auto;
-	max-width: min(95%, 64em);
+* {
+	margin: 0;
+	padding: 0;
 }
 
-header {
+body {
+	color: #000;
+	background-color: #fff;
+}
+
+header,
+footer {
+	margin: 1em;
+}
+
+header,
+header > div {
 	display: flex;
+	flex-flow: wrap row;
 	justify-content: space-between;
 	align-items: center;
-	flex-flow: row wrap;
-	flex-basis: 0;
 }
 
-h1 {
-	color: #fc0;
+header > a {
+	color: #000;
 }
 
-h1.title {
-	vertical-align: middle;
-	margin: 0;
-	font-size: 300%;
-}
-
-h1.error {
-	font-family: monospace;
-	font-size: 600%;
-	line-height: 0;
-}
-
-div.center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-a:link {
-	color: #fc0;
+header > a:link,
+header > a:visited {
 	text-decoration: none;
 }
 
-a:visited {
-	color: #da0;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #fe2;
+header > a:hover,
+header > a:active {
 	text-decoration: underline;
 }
 
+main {
+	max-width: min(95%, 64em);
+	margin: 1em auto;
+}
+
+main h1,
+main h2 {
+	margin-bottom: 0.5em;
+}
+
+hr {
+	color: #666;
+}
+
+a {
+	color: #26f;
+}
+
+a:link,
+a:visited {
+	text-decoration: underline;
+}
+
+a:hover,
 a:active {
-	color: #ff6;
-	text-decoration: none;
-}
-
-a.button {
-	color: #222;
-	background-color: #fc0;
-	padding: 0.2em 0.4em;
-	border-radius: 0.4em;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-a.button:link {
-	background-color: #fc0;
-}
-
-a.button:visited {
-	background-color: #da0;
-}
-
-a.button:hover {
-	background-color: #fe2;
-}
-
-a.button:active {
-	background-color: #ff6;
-}
-
-a.title {
 	text-decoration: none;
 }
 
 p.license {
-	color: #aaa;
 	text-align: center;
 }
 
-h1.topic,
-h2.topic {
-	margin-bottom: 0;
+p.detail,
+p.collapsed,
+p.license {
+	color: #666;
 }
 
-h3.topic {
-	margin-bottom: -0.5em;
+div.topic {
+	padding: 0.5em 0;
 }
 
-div.topic:hover {
-	background: #333;
-}
-
-p.detail {
-	color: #aaa;
+div.topic:hover,
+div.post:hover {
+	background-color: #ccc;
 }
 
 span.author {
@@ -115,56 +90,78 @@ p.content {
 	white-space: pre-line;
 }
 
+div#thread > p,
+div#thread > h2 {
+	margin-top: 0.5em;
+}
+
 div.post {
+	padding: 1em 0;
 	display: flex;
 	flex-flow: row;
 }
 
-div.post:hover {
-	background: #333;
+input,
+textarea {
+	margin: 0.5em 0;
 }
 
 input.text,
 textarea.text {
+	color: #000;
+	background-color: #ccc;
 	width: 100%;
-	color: #eee;
-	background-color: #444;
 	padding: 0.5em;
 	border: none;
 	border-radius: 0.4em;
-	margin-top: 0.5em;
-	margin-bottom: 1em;
 }
 
+a.button,
 button,
 input.submit {
-	color: #222;
-	background-color: #fc0;
+	color: #fff;
+	background-color: #26f;
 	padding: 0.2em 0.4em;
 	border: none;
 	border-radius: 0.4em;
-	font-weight: bold;
 	font-size: 100%;
-	margin-bottom: 1em;
+	text-decoration: none;
 }
 
-button:hover,
-input.submit:hover {
-	background-color: #fe2;
-}
+@media (prefers-color-scheme: dark) {
+	body {
+		color: #fff;
+		background-color: #000;
+	}
 
-button:active,
-input.submit:active {
-	background-color: #ff6;
-}
+	hr {
+		color: #888;
+	}
 
-img {
-	width: 5em;
-	height: 5em;
-	float: left;
-	margin: 1em;
-}
+	header > a {
+		color: #fff;
+	}
 
-p.collapsed {
-	color: #aaa;
+	div.topic:hover,
+	div.post:hover {
+		background-color: #222;
+	}
+
+	p.detail,
+	p.collapsed,
+	p.license {
+		color: #888;
+	}
+
+	input.text,
+	textarea.text {
+		color: #fff;
+		background-color: #222;
+	}
+
+	a.button,
+	button,
+	input.submit {
+		color: #000;
+	}
 }
