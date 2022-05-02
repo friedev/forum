@@ -18,7 +18,7 @@ function load_topics() {
 		. '`users`.`displayname` '
 		. 'FROM `topics` '
 		. 'JOIN `users` ON `topics`.`user_id`=`users`.`id` '
-		. 'ORDER BY `topics`.`date`'
+		. 'ORDER BY `topics`.`date` DESC'
 	);
 	$stmt->bind_result($id, $title, $date, $displayname);
 	$stmt->execute();
