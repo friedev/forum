@@ -6,11 +6,16 @@
 body {
 	color: #000;
 	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 header,
 footer {
-	margin: 1em;
+	padding: 1em;
 }
 
 header,
@@ -36,7 +41,8 @@ header > a:active {
 }
 
 main {
-	max-width: min(95%, 64em);
+	flex: 1;
+	width: min(95vw, 64em);
 	margin: 1em auto;
 }
 
