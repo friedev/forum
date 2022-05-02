@@ -32,6 +32,8 @@
 	function load_posts($mysqli, $topic_id) {
 		$msg = '<div id="thread">';
 
+		# Expose $title for use in <title>
+		global $title;
 		$stmt = $mysqli->prepare(
 			'SELECT `topics`.`title`, '
 			. '`topics`.`date`, '
@@ -132,7 +134,7 @@
 ?>
 <html lang="en">
 	<head>
-		<title>Forum</title>
+		<title><?php echo htmlentities($title) ?> - Forum</title>
 <!--#include virtual="/include/head.html"-->
 	</head>
 	<body>
