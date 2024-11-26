@@ -1,6 +1,6 @@
 # Forum
 
-A basic PHP web forum for the CSCE 464 course project.
+A basic PHP web forum created for a course project.
 
 ## Installation
 
@@ -64,4 +64,4 @@ Below are some features that could be added but are not present in this implemen
 
 ## License
 
-All rights reserved until further notice.
+This software is licensed under the [MIT License](https://mit-license.org/).
